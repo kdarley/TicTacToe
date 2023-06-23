@@ -7,9 +7,9 @@ const gameBoard = (() => {
 
     // check if the board has three of the same symbol in a row
     const gameStatus = () => {
+        let gameOver = false
         let x = 0
         let o = 0
-        console.log("what is the game board", gameBoard)
         // check the columns
         for (let col = 0; col <3; col++){
             x=0
@@ -23,13 +23,11 @@ const gameBoard = (() => {
             }
             if (x==3){
                 gameOver = true
-                console.log(gameOver)
                 break
             } 
 
             if (o==3){
                 gameOver = true
-                console.log(gameOver)
                 break
             } 
         }
@@ -47,13 +45,11 @@ const gameBoard = (() => {
             }
             if (x==3){
                 gameOver = true
-                console.log(gameOver)
                 break
             } 
 
             if (o==3){
                 gameOver = true
-                console.log(gameOver)
                 break
             } 
         }
@@ -70,12 +66,10 @@ const gameBoard = (() => {
 
         if (x==3){
             gameOver = true
-            console.log(gameOver)
         } 
 
         if (o==3){
             gameOver = true
-            console.log(gameOver)
         } 
         // check right to left diagonal
         x=0
@@ -87,48 +81,33 @@ const gameBoard = (() => {
                 o++
             }
         }
-        
         if (x==3){
             gameOver = true
-            console.log(gameOver)
-        } 
-
+        }
         if (o==3){
             gameOver = true
-            console.log(gameOver)
-        } 
-
-        
+        }   
+    return{
+        gameOver
+    }
     }
 
     const update = (row, column, player) => {
         gameBoard[row][column] = player;
-        gameStatus()
+        gameOver = gameStatus()
     };
-
-    // console.log("board",gameBoard)
 
     return {
         gameBoard,
         update,
-        gameOver,
-        gameStatus
+        gameOver
     }
 })();
 
 let a = gameBoard
 // test wins
-a.update(0,0,0)
-a.update(1,1,0)
-a.update(2,0,0)
-// a.update(0,1,1)
-// a.update(0,2,1)
+a.update(0,0,1)
+a.update(1,0,1)
+a.update(2,0,1)
 
-
-
-
-// a.update(1,1,0)
-// a.update(2,1,1)
-
-// console.log(a.gameOver)
 console.log(a.gameBoard)
