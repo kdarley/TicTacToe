@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    width: 100%;
     margin: 0px;
     padding: 0px;
 }
@@ -8,6 +9,79 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    
+}
+
+h1, h2 {
+    padding: 0px;
+    margin: 0px;
+    /* padding-top:  */
+    margin-top: 8px;
+
+}
+
+button.player-option {
+    /* padding: 0px; */
+    margin-top: 8px;
+    margin-bottom: 8px;
+    /* width: 50%; */
+    width: 6rem;
+    height: 1.5rem;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    /* background-color: ; */
+    border-radius: 3px;
+    border-style: solid;
+    font-weight: 800;
+    /* color: blue; */
+    cursor: pointer;
+}
+
+button.player-option:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button.player-option:active {
+    background-color: lightgreen;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: translateY(1px);
+}
+
+button.selection{
+    background-color: lightgreen;
+}
+
+div.container {
+    display: flex;
+    align-items: top;
+    justify-content: space-evenly;
+    height: 100%;    
+    width: 100%;
+
+    /* background-color: blue; */
+}
+
+div.player-select {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    /* margin: 0px; */
+    /* background-color: red; */
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+div.select-options{
+    /* padding:0px; */
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+    /* background-color: blue; */
+    width: 100%;
 }
 
 .board {
